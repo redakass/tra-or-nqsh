@@ -6,8 +6,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const quizSquare = document.querySelector(".quiz");
     const conBtns = document.querySelector('.btns');
     const winner = document.querySelector('.winner');
+    const wins = document.querySelector('#wins');
+    const loses = document.querySelector("#loses");
 
     let coinSide;
+    let numOfWins;
+    let numOfLoses;
     
     function resetTheGame() {
         conBtns.classList.add("hidden");
@@ -31,27 +35,37 @@ window.addEventListener("DOMContentLoaded", () => {
             winner.innerHTML =
               '<span style="color: green">&#128513; لقد فزت &#128513;</span>';
             coinImg.src = "img/front.png";
+            numOfWins = parseInt(wins.innerHTML) + 1;
+            wins.innerHTML = numOfWins; 
             resetTheGame()
         } else {
             coinImg.src = "img/front.png";
+            numOfLoses = parseInt(loses.innerHTML) + 1;
+            loses.innerHTML = numOfLoses;
             winner.innerHTML =
               '<span style="color: red">&#128531; لقد خسرت &#128531;</span>';
             resetTheGame()
         }
+        console.log(numOfWins, numOfLoses)
     };
     
     backBtn.onclick = function () {
         if (coinSide === 0) {
             winner.innerHTML =
-              '<span style="color: green">&#128513; لقد فزت &#128513;</span>';
+            '<span style="color: green">&#128513; لقد فزت &#128513;</span>';
+            numOfWins = parseInt(wins.innerHTML) + 1;
+            wins.innerHTML = numOfWins;
             coinImg.src = "img/back.png";
             resetTheGame()
         } else {
             coinImg.src = "img/back.png";
+            numOfLoses = parseInt(loses.innerHTML) + 1;
+            loses.innerHTML = numOfLoses;
             winner.innerHTML =
-              '<span style="color: red">&#128531; لقد خسرت &#128531;</span>';
+            '<span style="color: red">&#128531; لقد خسرت &#128531;</span>';
             resetTheGame()
         }
+        console.log(numOfWins, numOfLoses);
     };
-
+    
 });
