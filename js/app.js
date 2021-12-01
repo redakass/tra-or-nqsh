@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", () => {
         coinImg.classList.add('hidden');
         winner.innerHTML = "";
         coinSide = Math.round(Math.random());
-        console.log(coinSide);
     };
 
     frontBtn.onclick = function () {
@@ -46,7 +45,6 @@ window.addEventListener("DOMContentLoaded", () => {
               '<span style="color: red">&#128531; لقد خسرت &#128531;</span>';
             resetTheGame()
         }
-        console.log(numOfWins, numOfLoses)
     };
     
     backBtn.onclick = function () {
@@ -65,7 +63,6 @@ window.addEventListener("DOMContentLoaded", () => {
             '<span style="color: red">&#128531; لقد خسرت &#128531;</span>';
             resetTheGame()
         }
-        console.log(numOfWins, numOfLoses);
     };
     
 });
